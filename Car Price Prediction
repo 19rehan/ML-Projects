@@ -1,0 +1,41 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import sklearn
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import f_classif
+from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split, KFold
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import precision_recall_fscore_support, classification_report
+
+
+car = pd.read_csv(r"F:\A I Skillvention\data\car_purchasing.csv",encoding = 'latin1')
+car
+
+car.info()
+car.isnull().sum()
+car.head(20)
+x_train = car.drop(['customer name','customer e-mail','credit card debt','country','gender','car purchase amount'],axis=1)
+x = x_train
+x
+
+y_train = car['car purchase amount']
+y =  y_train
+y
+xtrain,xtest,ytrain,ytest=train_test_split(x,y,train_size=0.8)
+rf = LinearRegression()
+model_rf = rf.fit(xtrain,ytrain)
+prdct = rf.predict(xtest)
+prdct
+acrcy = rf.score(xtrain,ytrain)
+real = acrcy*100
+real
+from sklearn.metrics import r2_score
+t_acrcy = r2_score(ytest,prdct)
+tst = t_acrcy*100
+tst
