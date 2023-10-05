@@ -1,0 +1,38 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import sklearn
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split, KFold
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import precision_recall_fscore_support, classification_report
+
+df = pd.read_csv(r'F:\A I Skillvention\data\tested.csv')
+df
+
+df.isnull().sum()
+
+x = df[['Age']]
+y = df[['Survived']]
+
+xtrain,xtest,ytrain,ytest=train_test_split(x,y,train_size=0.8)
+
+rf = RandomForestClassifier()
+model_rf = rf.fit(xtrain,ytrain)
+
+model_rf
+
+prdct = rf.predict(xtest)
+prdct
+acrcy = rf.score(xtrain,ytrain)
+
+real = acrcy*100
+real
+
+from sklearn.metrics import r2_score
+t_acrcy = r2_score(ytest,prdct)
+tst = t_acrcy*100
+tst
+
