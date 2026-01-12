@@ -1,4 +1,4 @@
-**ML Projects & Techniques**
+**Machine Learning Projects & Techniques**
 
 These are the techniques of ML.
 
