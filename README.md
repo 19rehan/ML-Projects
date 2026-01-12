@@ -1,6 +1,6 @@
 **Machine Learning Projects & Techniques**
 
-These are the techniques of ML.
+These are the techniques of Machine Learning.
 
 
 If you learn this techniques you will be master in Machine Learning Basics.
