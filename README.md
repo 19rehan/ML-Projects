@@ -9,4 +9,4 @@ If you learn this techniques you will be master in Machine Learning Basics.
 This Also Includes Some Basic Level Projects.
 
 
-Each step has some basic project for better understanding.
+Each Technique has some basic project for better understanding.
